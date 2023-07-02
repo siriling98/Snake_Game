@@ -1,4 +1,4 @@
-import snake as s
+import Snake as s
 
 # Calling the snake game main function for execution
 new_game = s.MySnake()
