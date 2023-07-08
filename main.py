@@ -25,7 +25,8 @@ while True:
     if head_part.xcor() >= (X_COR/2) or head_part.xcor() <= -(X_COR/2) \
             or head_part.ycor() >= ((Y_COR/2)-150) or head_part.ycor() <= -((Y_COR/2)-150):
         scoreboard.game_over()
-        screen.exitonclick()                     # Wall collision
+        # screen.exitonclick()                     # Wall collision
+        break
 
     screen.update()
     time.sleep(game_speed)  # Used to make the loop sleep i.e. make snake movement slow
@@ -45,6 +46,7 @@ while True:
             pass
         elif head_part.distance(body) < 10:
             scoreboard.game_over()
-            screen.exitonclick()
+            # screen.exitonclick()
+            break
 
-
+screen.exitonclick()
