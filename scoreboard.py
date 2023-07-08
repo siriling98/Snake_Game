@@ -12,14 +12,17 @@ class ScoreBoard(Turtle):
         self.display_score()
 
     def display_score(self):
+        """Displays score"""
         self.write(f"Score = {self.score} 🐢", align="center", font=('Courier', 24, 'normal'))
 
     def score_increase(self):
+        """Increases the score"""
         self.score += 1
         self.clear()
         self.display_score()
 
     def game_over(self):
+        """Displayes Game over message"""
         self.goto(0, 0)
         self.write(f"GAME OVER! 🐍", align="center", font=('Courier', 24, 'normal'))
         self.goto(0, -30)

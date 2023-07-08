@@ -25,7 +25,7 @@ while True:
     if head_part.xcor() >= (X_COR/2) or head_part.xcor() <= -(X_COR/2) \
             or head_part.ycor() >= ((Y_COR/2)-150) or head_part.ycor() <= -((Y_COR/2)-150):
         scoreboard.game_over()
-        screen.exitonclick()
+        screen.exitonclick()                     # Wall collision
 
     screen.update()
     time.sleep(game_speed)  # Used to make the loop sleep i.e. make snake movement slow
@@ -35,12 +35,12 @@ while True:
         new_snake.add_part(snake_body)
         scoreboard.score_increase()
 
-        if game_speed > 0.1:
+        if game_speed > 0.1:                # Increases the snake movement speed
             game_speed -= 0.1
     else:
         new_snake.snake_movement()
 
-    for body in snake_body:
+    for body in snake_body:                # Tail collision
         if body == head_part:
             pass
         elif head_part.distance(body) < 10:

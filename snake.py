@@ -44,13 +44,13 @@ class MySnake:
             self.snake_parts[0].setheading(RIGHT)
 
     def add_part(self, current_snake_body):
+        """Add an snake body every time the snake eats the food"""
         new_part = Turtle("square")
         new_part.color("white")
         new_part.penup()
         new_part.setpos(self.snake_parts[-1].pos())
         self.snake_parts.append(new_part)
         current_snake_body.append(new_part)
-
 
     def snake_movement(self):
         """Method responsible for snake body movement."""
